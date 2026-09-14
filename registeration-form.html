@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="register.css">
+</head>
+<style>
+    *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background: black;
+    font-family:Arial, sans-serif;
+}
+
+.register-container{
+    width:100%;
+    max-width:450px;
+    padding:20px;
+}
+
+.register-form{
+  background:rgba(255,255,255,0.05);
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+    
+    border:1px solid rgba(255,255,255,.1);
+    transition: 1s ease;
+
+
+}
+.register-form:hover{
+    transform: translateY(-10px);
+        background-color: var(--gold);
+
+    box-shadow:0 0 20px rgba(212,175,55,.4);
+
+}
+.register-form h2{
+    text-align:center;
+    color: gold;
+    font-size: 30px;
+    margin-bottom:20px;
+}
+
+.register-form input{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:1px solid #ccc;
+    border-radius:6px;
+    font-size:15px;
+}
+
+.register-form button{
+    width:100%;
+    padding:12px;
+    margin-top:10px;
+    border:none;
+    border-radius:6px;
+    background:#f57224;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.register-form button:hover{
+    background: gold;
+    transform:translateY(-2px);
+    color: black;
+}
+
+.register-form p{
+    text-align:center;
+    margin-top:15px;
+}
+
+.register-form a{
+    color:#f57224;
+    text-decoration:none;
+    font-weight:bold;
+}
+</style>
+<body>
+
+<div class="register-container">
+    <form class="register-form">
+
+        <h2>Create Account</h2>
+
+        <input type="text" placeholder="Full Name" required>
+
+        <input type="email" placeholder="Email Address" required>
+
+        <input type="tel" placeholder="Phone Number" required>
+
+        <input type="password" placeholder="Password" required>
+
+        <input type="password" placeholder="Confirm Password" required>
+
+        <button type="submit">Register</button>
+
+        <p>Already have an account?
+            <a href="login-form.html">Login</a>
+        </p>
+
+    </form>
+</div>
+
+</body>
+</html>
