@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    :root{
+ --gold:#d4af37;
+
+    --black: black;
+    --dark:#181818;
+    --white:#ffffff;
+    --gray:#bdbdbd;
+    }
+    body{
+        background-color: var(--black);
+    }
+
+
+.hero-content{
+    /* width: 1400px; */
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+.img{
+
+    width: 1000px;
+    height: 500px;
+    
+}
+
+
+
+
+
+
+
+
+
+
+    .products-section{
+    padding: 80px 5%;
+}
+
+.products-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+}
+
+.card{
+    background:var(--dark);
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    transition:.4s;
+
+    animation:cardAppear 1s ease;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+
+    box-shadow:0 0 20px rgba(212,175,55,.4);
+}
+
+.card img{
+    width:100%;
+    height:280px;
+    object-fit:cover;
+
+    transition:.5s;
+}
+
+.card:hover img{
+    transform:scale(1.08);
+}
+
+.card h3{
+    padding:15px;
+    
+    color: var(--white);
+}
+
+.card p{
+    padding:0 15px;
+     
+}
+
+.old-price{
+    text-decoration:line-through;
+    color:red;
+    margin-left:15px;
+}
+
+.new-price{
+    color:lime;
+    margin-left:15px;
+    font-weight:bold;
+}
+
+.discount{
+    display:inline-block;
+
+    background:red;
+    color:white;
+
+    margin:15px;
+
+    padding:5px 10px;
+
+    border-radius:5px;
+}
+
+.card button{
+    width:calc(100% - 30px);
+
+    margin:15px;
+
+    padding:12px;
+
+    border:none;
+
+    background:var(--gold);
+
+    border-radius:30px;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.card button:hover{
+    background:white;
+}
+</style>
+<body>
+    <section class="hero">
+        <div class="hero-content">
+          <div>
+              <img class="img" src="111.jpeg"  alt="">
+          </div>
+        </div>
+    </section>
+
+
+
+
+
+<section id="products" class="products-section">
+
+    <h2>Featured Products</h2>
+
+    <div class="products-grid">
+
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyYzNYOdYmqAmkMEK9DeEFUVyX-nlzeIIc_13BM4UqUQ&s=10" alt="">
+            <h3>Luxury Braidal  Set</h3>
+            <p>⭐⭐⭐⭐⭐</p>
+            <span class="old-price">Rs.5000</span>
+            <span class="new-price">Rs.3500</span>
+            <p class="discount">30% OFF</p>
+            <button>Add To Cart</button>
+        </div>
+         <div class="card">
+            <img src="https://zeesy.pk/cdn/shop/files/bridal-set-golden-champagne-imperial-malachite-gems-bridal-set-31127863-45434818658609.webp?v=1779956850&width=1200" alt="">
+            <h3>Luxury Braidal Set</h3>
+            <p>⭐⭐⭐⭐⭐</p>
+            <span class="old-price">Rs.5000</span>
+            <span class="new-price">Rs.3500</span>
+            <p class="discount">30% OFF</p>
+            <button>Add To Cart</button>
+        </div>
+         <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpL4KVBRXDy3wWZJu7gJvfHo77YmeeMJhI8RaR9LC9iQ&s" alt="">
+            <h3>Luxury Braidal Set</h3>
+            <p>⭐⭐⭐⭐⭐</p>
+            <span class="old-price">Rs.5000</span>
+            <span class="new-price">Rs.3500</span>
+            <p class="discount">30% OFF</p>
+            <button>Add To Cart</button>
+        </div>
+
+        <div class="card">
+            <img src="https://zeesy.pk/cdn/shop/files/necklace-sets-golden-green-heirloom-grand-luminous-necklace-set-31124743-44561899422001.webp?v=1779956305&width=720" alt="">
+            <h3>Luxery Braidal Set</h3>
+            <p>⭐⭐⭐⭐⭐</p>
+            <span class="old-price">Rs.3000</span>
+            <span class="new-price">Rs.2200</span>
+            <p class="discount">25% OFF</p>
+            <button>Add To Cart</button>
+        </div>
+
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhN9Enqftlr47nGxcLD8Ql0wWVu-YtHClHEYELumN2hw&s" alt="">
+            <h3>Gold Braidal Set</h3>
+            <p>⭐⭐⭐⭐⭐</p>
+            <span class="old-price">Rs.2500</span>
+            <span class="new-price">Rs.1800</span>
+            <p class="discount">20% OFF</p>
+            <button>Add To Cart</button>
+        </div>
+
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQG1pIPtsA9I3X6EqV6SUJGVGCjiODB1bMbIh7Km0IZV9R6nNqVvx37Kxw&s=10" alt="">
+            <h3>Gold Braidal Sets</h3>
+            <p>⭐⭐⭐⭐⭐</p>
+            <span class="old-price">Rs.4500</span>
+            <span class="new-price">Rs.3200</span>
+            <p class="discount">35% OFF</p>
+            <button>Add To Cart</button>
+        </div>
+
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpL4KVBRXDy3wWZJu7gJvfHo77YmeeMJhI8RaR9LC9iQ&s" alt="">
+            <h3>Luxury  Braidal Set</h3>
+            <p>⭐⭐⭐⭐⭐</p>
+            <span class="old-price">Rs.6000</span>
+            <span class="new-price">Rs.4500</span>
+            <p class="discount">25% OFF</p>
+            <button>Add To Cart</button>
+        </div>
+
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZB9pMeZkse5rkJLh96fqiTNuMUYqowi4joOsxbJdWBpkrnry-M6ab2RE&s=10" alt="">
+            <h3>Bridal Jewellery Set</h3>
+            <p>⭐⭐⭐⭐⭐</p>
+            <span class="old-price">Rs.8000</span>
+            <span class="new-price">Rs.5500</span>
+            <p class="discount">30% OFF</p>
+            <button>Add To Cart</button>
+        </div>
+
+        <!-- 6 cards ko copy karke 12+ products bana lo -->
+
+    </div>
+
+</section>
+</body>
+
+</html>
