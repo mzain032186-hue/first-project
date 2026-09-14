@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Z & Z Jewellers</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<style>
+    :root{
+    --gold:#d4af37;
+    --black:#0f0f0f;
+    --dark:#181818;
+    --white:#ffffff;
+    --gray:#bdbdbd;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--black);
+    color:var(--white);
+}
+
+/* HEADER */
+
+.header{
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(10px);
+    
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:20px 5%;
+
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo h2{
+    color:var(--gold);
+    letter-spacing:3px;
+    font-size: 50px;
+    font-family: italic;
+}
+
+.navbar{
+    display:flex;
+    gap:25px;
+  
+}
+
+.navbar a{
+    text-decoration:none;
+    color:white;
+    position:relative;
+    font-size:  20px;
+    font-weight: bold;
+}
+
+.navbar a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-5px;
+    
+
+    width:0;
+    height:2px;
+
+    background:var(--gold);
+
+    transition:.3s;
+}
+
+.navbar a:hover::after{
+    width:100%;
+}
+
+.header-icons{
+    display:flex;
+    gap:15px;
+}
+
+.header-icons a{
+    color:white;
+    text-decoration:none;
+}
+
+/* HERO */
+
+.hero{
+    height:90vh;
+
+    background:
+    linear-gradient(rgba(0,0,0,.7),
+    rgba(0,0,0,.7)),
+    url("images/banner.jpg");
+
+    background-size:cover;
+    background-position:center;
+    
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    
+}
+
+.hero-content{
+    animation:slideDown 1s ease;
+    
+}
+
+.hero-content h1{
+    color:var(--gold);
+    font-size:clamp(2.5rem,6vw,5rem);
+}
+
+.hero-content p{
+    margin:20px 0;
+    color:var(--gray);
+}
+
+.hero-content button{
+    background:linear-gradient(45deg,#d4af37,#f5d76e);
+
+    border:none;
+    padding:15px 35px;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    transition:.4s;
+}
+
+.hero-content button:hover{
+    transform:translateY(-5px);
+}
+
+/* SECTION HEADINGS */
+
+section h2{
+    text-align:center;
+    margin-bottom:60px;
+    margin-top: 60px;
+    font-size: 50px;
+    color:var(--gold);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   
+}
+
+/* CATEGORIES */
+
+.categories-section{
+    padding:80px 5%;
+}
+
+.categories{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.category{
+    background:rgba(255,255,255,0.05);
+
+    backdrop-filter:blur(10px);
+
+    border:1px solid rgba(255,255,255,.1);
+
+    border-radius:20px;
+
+    padding:40px;
+
+    text-align:center;
+    text-decoration: none;
+    color: white;
+    font-size: 30px;
+    font-family: italic;
+    
+    transition:.4s;
+}
+.category:hover{
+      transform:translateY(-10px);
+      background-color: var(--gold);
+
+    box-shadow:0 0 20px rgba(212,175,55,.4);
+}
+
+.category i{
+    font-size:40px;
+    color:var(--gold);
+    margin-bottom:15px;
+}
+
+.category:hover{
+    transform:translateY(-10px);
+}
+
+/* FLASH SALE */
+
+.flash-sale{
+    padding:80px 5%;
+}
+
+.sale-box{
+    background:linear-gradient(
+    45deg,
+    #d4af37,
+    #8a6a08);
+
+    color:black;
+
+    text-align:center;
+
+    padding:50px;
+
+    border-radius:20px;
+
+    position:relative;
+}
+
+.sale-box::before{
+    content:"HOT";
+    position:absolute;
+
+    top:15px;
+    right:15px;
+
+    background:red;
+    color:white;
+
+    padding:5px 12px;
+
+    border-radius:5px;
+}
+
+/* PRODUCTS */
+
+.products-section{
+    padding:80px 5%;
+}
+
+.products-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+}
+
+.card{
+    background:var(--dark);
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    transition:.4s;
+
+    animation:cardAppear 1s ease;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+
+    box-shadow:0 0 20px rgba(212,175,55,.4);
+}
+
+.card img{
+    width:100%;
+    height:280px;
+    object-fit:cover;
+
+    transition:.5s;
+}
+
+.card:hover img{
+    transform:scale(1.08);
+}
+
+.card h3{
+    padding:15px;
+}
+
+.card p{
+    padding:0 15px;
+}
+
+.old-price{
+    text-decoration:line-through;
+    color:red;
+    margin-left:15px;
+}
+
+.new-price{
+    color:lime;
+    margin-left:15px;
+    font-weight:bold;
+}
+
+.discount{
+    display:inline-block;
+
+    background:red;
+    color:white;
+
+    margin:15px;
+
+    padding:5px 10px;
+
+    border-radius:5px;
+}
+
+.card button{
+    width:calc(100% - 30px);
+
+    margin:15px;
+
+    padding:12px;
+
+    border:none;
+
+    background:var(--gold);
+
+    border-radius:30px;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.card button:hover{
+    background:white;
+}
+
+/* ABOUT */
+
+.about{
+    padding:100px 10%;
+    text-align:center;
+    background-color: rgba(255,255,255,0.05);
+}
+
+.about p{
+    max-width:800px;
+    margin:auto;
+    line-height:1.8;
+    color:var(--gray);
+}
+
+.about h2::after{
+    content:"";
+    display:block;
+
+    width:450px;
+    height:3px;
+
+    background:var(--gold);
+
+    margin:10px auto;
+}
+
+/* FOOTER */
+
+footer{
+    background:#080808;
+
+    text-align:center;
+
+    padding:60px 20px;
+}
+
+.social{
+    margin:20px 0;
+}
+
+.social i{
+    font-size:28px;
+    margin:0 10px;
+
+    transition:.3s;
+}
+
+.social i:hover{
+    color:var(--gold);
+    transform:translateY(-5px);
+}
+
+/* ANIMATIONS */
+
+@keyframes slideDown{
+    from{
+        opacity:0;
+        transform:translateY(-50px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes cardAppear{
+    from{
+        opacity:0;
+        transform:scale(.8);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+/* TABLET */
+
+@media(max-width:768px){
+
+    .header{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .categories{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .products-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+/* MOBILE */
+
+@media(max-width:480px){
+
+    .navbar{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .categories{
+        grid-template-columns:1fr;
+    }
+
+    .products-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero-content h1{
+        font-size:2rem;
+    }
+}
+</style>
+<body>
+
+<!-- HEADER -->
+
+<header class="header">
+
+    <div class="logo">
+        <h2>Z & Z JEWELLERS</h2>
+    </div>
+
+    <nav class="navbar">
+        <a href="#">Home</a>
+        <a href="#categories">Categories</a>
+        <a href="#products">Products</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="header-icons">
+        <a href="login-form.html">Login</a>
+        <a href="registeration-form.html">Register</a>
+        <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+    </div>
+
+</header>
+
+<!-- HERO -->
+
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>Luxury Bridal Collection</h1>
+
+        <p>
+            Elegant jewellery crafted for every
+            special moment. Discover premium
+            necklaces, rings and bridal sets.
+        </p>
+
+        <button>Explore Collection</button>
+
+    </div>
+ 
+
+</section>
+
+
+<section class="hero">
+ <div class="hero-content">
+    <img src="wwwwww-ww.jpeg" alt="">
+ </div>
+ </section>
+
+
+<!-- CATEGORIES -->
+
+<section id="categories" class="categories-section">
+
+    <h2>Shop By Category</h2>
+
+    <div class="categories">
+
+      
+        <a class="category" href="bracelets.html">Bracelets</a>
+        <a class="category" href="earring.html">Earrings</a>
+        <a class="category" href="necklaces.html">Necklaces</a>
+        <a class="category" href="rings.html">Rings</a>
+        <a class="category" href="braidal-sets.html">Braidal Sets</a>
+
+    </div>
+
+</section>
+
+<!-- FLASH SALE -->
+
+<section class="flash-sale">
+
+    <div class="sale-box">
+
+        <h2>FLASH SALE</h2>
+
+        <h1>UP TO 50% OFF</h1>
+
+        <p>Limited Time Jewellery Offers</p>
+
+    </div>
+
+</section>
+
+<!-- PRODUCTS -->
+
+<section id="products" class="products-section">
+
+    <h2>Featured Products</h2>
+
+    <div class="products-grid">
+
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-2M2yJPpotvzdYhRo1dG87g9BSEZNPZJTxfvmOt9sZ3D1Bis4x-bmFDww&s=10" alt="">
+            <h3>Luxury Earing</h3>
+            <p>⭐⭐⭐⭐⭐</p>
+            <span class="old-price">Rs.5000</span>
+            <span class="new-price">Rs.3500</span>
+            <p class="discount">30% OFF</p>
+            <button>Add To Cart</button>
+        </div>
+
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzEBuglgyDXnrlRN1fbUvz0Q3JavSa5vbjSw9BhdYTpA&s=10" alt="">
+            <h3>Diamond Ring</h3>
+            <p>⭐⭐⭐⭐⭐</p>
+            <span class="old-price">Rs.3000</span>
+            <span class="new-price">Rs.2200</span>
+            <p class="discount">25% OFF</p>
+            <button>Add To Cart</button>
+        </div>
+
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnE1Uybg4oeGETTlcCm3JcfAS-qfdSn2KVgCrdFULDMA&s=10" alt="">
+            <h3>Luxery Jewllery Item</h3>
+            <p>⭐⭐⭐⭐⭐</p>
+            <span class="old-price">Rs.2500</span>
+            <span class="new-price">Rs.1800</span>
+            <p class="discount">20% OFF</p>
+            <button>Add To Cart</button>
+        </div>
+
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLCpw00H1hGA6HlCSQxPEPqXXODvH_fMvuK8Tc7AR53c-PoCYlyD-ftTc&s=10" alt="">
+            <h3>Luxery Earings</h3>
+            <p>⭐⭐⭐⭐⭐</p>
+            <span class="old-price">Rs.4500</span>
+            <span class="new-price">Rs.3200</span>
+            <p class="discount">35% OFF</p>
+            <button>Add To Cart</button>
+        </div>
+
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUSXFK-y4BtySxH1rtyQ0RHrUzdGo0F5Rp9kfyh8JBuA&s=10" alt="">
+            <h3>Gold Bangles</h3>
+            <p>⭐⭐⭐⭐⭐</p>
+            <span class="old-price">Rs.6000</span>
+            <span class="new-price">Rs.4500</span>
+            <p class="discount">25% OFF</p>
+            <button>Add To Cart</button>
+        </div>
+
+        
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdHR8uofrmPJ-P53Kqrqp9pcrd7t51W1d2657FLYJz9qamzKgHROlbQQk9&s=10" alt="">
+            <h3>Bridal Jewellery Set</h3>
+            <p>⭐⭐⭐⭐⭐</p>
+            <span class="old-price">Rs.8000</span>
+            <span class="new-price">Rs.5500</span>
+            <p class="discount">30% OFF</p>
+            <button>Add To Cart</button>
+        </div>
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6vosYeDXaYTh6J9CboZqXFtGp_OhF6L55gdL8rm-Bsw&s=10" alt="">
+            <h3>Bridal Jewellery Set</h3>
+            <p>⭐⭐⭐⭐⭐</p>
+            <span class="old-price">Rs.8000</span>
+            <span class="new-price">Rs.5500</span>
+            <p class="discount">30% OFF</p>
+            <button>Add To Cart</button>
+        </div>
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR58cPH6qo8DJ95PM9STzs-M65KKzD-J1apnaOakpqrVQ&s=10" alt="">
+            <h3>Bridal Bracelets</h3>
+            <p>⭐⭐⭐⭐⭐</p>
+            <span class="old-price">Rs.8000</span>
+            <span class="new-price">Rs.5500</span>
+            <p class="discount">30% OFF</p>
+            <button>Add To Cart</button>
+        </div>
+
+        <!-- 6 cards ko copy karke 12+ products bana lo -->
+
+    </div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about" class="about">
+
+    <h2>About Z & Z Jewellers</h2>
+
+    <p>
+        Z & Z Jewellers offers premium quality
+        bridal jewellery, rings, necklaces,
+        bracelets and luxury accessories.
+        We focus on elegance, quality and
+        customer satisfaction.
+    </p>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer id="contact">
+
+    <h2>Z & Z JEWELLERS</h2>
+
+    <p>📍 3 Block Sillanwali</p>
+
+    <p>📞 0321-8630636</p>
+    
+    <p>mzain055@gmail.com</p>
+
+    <div class="social">
+
+        <i class="fab fa-facebook"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-whatsapp"></i>
+
+    </div>
+
+    <p>© 2026 Z & Z Jewellers | All Rights Reserved</p>
+
+</footer>
+
+</body>
+</html>
