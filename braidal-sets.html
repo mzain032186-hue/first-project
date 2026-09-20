@@ -140,6 +140,43 @@
 .card button:hover{
     background:white;
 }
+@media(max-width:768px){
+
+    .header{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .categories{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .products-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+/* MOBILE */
+
+@media(max-width:480px){
+
+    .navbar{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .categories{
+        grid-template-columns:1fr;
+    }
+
+    .products-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero-content h1{
+        font-size:2rem;
+    }
+}
 </style>
 <body>
     <section class="hero">
